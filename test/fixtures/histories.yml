@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  to: 1
+  ammount: 9.99
+
+two:
+  type: 
+  to: 1
+  ammount: 9.99
