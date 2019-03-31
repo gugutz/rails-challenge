@@ -1,15 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <title>RailsChallenge</title>
+    <title><%= @page_title %></title>
+    <meta charset="UTF-8">
+    <meta name="description" content="<%= @page_description %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <![endif]-->
+  </head>
+  <head>
+
   </head>
 
   <body>
-    <%= yield %>
+    <section class="section">
+
+        <% render partial: "home/header" %>
+
+        <% render partial: "home/navbar" %>
+
+      <div class="content">  
+
+        <!-- this is required by devise -->
+        <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+
+        <%= yield %>  
+      </div>  
+
+    <%= render partial: "footer" %>
+
+    </section>
+  </body>
+</html>
+
+
+
+<!DOCTYPE html>
+  <body>
+    
+
   </body>
 </html>
