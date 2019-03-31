@@ -17,18 +17,16 @@
     <!--[if (lt IE 9) & (!IEMobile)]>
     <![endif]-->
   </head>
-  <head>
-
-  </head>
 
   <body>
-    <section class="section">
 
-        <% render partial: "home/header" %>
+    <%= render "layouts/header" %>
 
-        <% render partial: "home/navbar" %>
+    <%= render "layouts/navbar" %>
 
-      <div class="content">  
+    <%= render "layouts/sidebar" %>
+
+    <section class="content">
 
         <!-- this is required by devise -->
         <% if notice %>
@@ -39,19 +37,10 @@
         <% end %>
 
         <%= yield %>  
-      </div>  
-
-    <%= render partial: "footer" %>
-
     </section>
-  </body>
-</html>
 
-
-
-<!DOCTYPE html>
-  <body>
-    
+    <%= render "layouts/footer" %>
 
   </body>
 </html>
+
