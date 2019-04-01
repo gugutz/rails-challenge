@@ -15,7 +15,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--[if (lt IE 9) & (!IEMobile)]>
-    <![endif]-->
+        <![endif]-->
   </head>
 
   <body>
@@ -24,22 +24,30 @@
 
     <%= render "layouts/navbar" %>
 
-    <%= render "layouts/sidebar" %>
+    <div class="columns">
 
-    <section class="content">
+      <div class="column is-one-quarter">
+        <%= render "layouts/sidebar" %>
+      </div>
+      
+      <div class="column is-fluid">
+        <section class="content has-text-left">
 
-        <!-- this is required by devise -->
-        <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-        <% end %>
+          <!-- this is required by devise -->
+          <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
 
-        <%= yield %>  
-    </section>
+          <%= yield %>  
+        </section>
+      </div>
 
-    <%= render "layouts/footer" %>
+
+
+      <%= render "layouts/footer" %>
 
   </body>
 </html>

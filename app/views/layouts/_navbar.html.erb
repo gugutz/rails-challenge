@@ -45,15 +45,15 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary" href="/clients/sign_up">
-            <strong>Sign up</strong>
-            <!-- <%= link_to 'new_client_registration', '/clients/sign_up', :method => :get %> -->
-          </a>
-          <a class="button is-light" href="/clients/sign_in">
-            <strong>Login</strong>
-            <!-- <%= link_to 'login', '/login', :method => :get %> -->
-          </a>
-          </a>
+          <% if client_signed_in? %>
+          <p>Logged in as <strong><%= current_client.email %></strong>.</p>
+          <%= link_to 'Edit profile', edit_client_registration_path, :class => 'navbar-link' %> |
+          <%= link_to "Logout", destroy_client_session_path, method: :delete, :class => 'navbar-link'  %>
+          <% else %>
+          <%= link_to "Sign up", new_client_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "Login", new_client_session_path, :class => 'navbar-link'  %>
+          <% end %>
+
         </div>
       </div>
     </div>

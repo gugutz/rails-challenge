@@ -1,1 +1,44 @@
-  <p>Login</p>
+<aside class='sidebar'>
+
+  <p class="">
+    <% if client_signed_in? && current_client.account != nil %>
+
+    Olá <strong><%= current_client.email %></strong>.<br>
+    O que deseja fazer?
+
+    <a class="button is-light is-fullwidth" href="/clients/sign_up">
+      <strong>Saldo</strong>
+      <!-- <%= link_to 'new_client_registration', '/clients/sign_up', :method => :get %> -->
+    </a>
+    <a class="button is-light is-fullwidth" href="/clients/sign_in">
+      <strong>Extrato</strong>
+      <!-- <%= link_to 'login', '/login', :method => :get %> -->
+    </a>
+    <a class="button is-light is-fullwidth" href="/clients/sign_in">
+      <strong>Saque</strong>
+      <!-- <%= link_to 'login', '/login', :method => :get %> -->
+    </a>
+    <a class="button is-light is-fullwidth" href="/clients/sign_in">
+      <strong>Deposito</strong>
+      <!-- <%= link_to 'login', '/login', :method => :get %> -->
+    </a>
+    <a class="button is-light is-fullwidth" href="/clients/sign_in">
+      <strong>Transferencia</strong>
+      <!-- <%= link_to 'login', '/login', :method => :get %> -->
+    </a>
+    <% elsif client_logged_in? && current_client.account == nil %> 
+    <% end %>
+
+    <% unless client_signed_in? %>
+    <a class="button is-light is-fullwidth" href="/clients/sign_up">
+      <strong>Sign up</strong>
+      <!-- <%= link_to 'new_client_registration', '/clients/sign_up', :method => :get %> -->
+    </a>
+    <a class="button is-light is-fullwidth" href="/clients/sign_in">
+      <strong>Login</strong>
+      <!-- <%= link_to 'login', '/login', :method => :get %> -->
+    </a>
+    <% end %>
+  </p>
+
+</aside>
