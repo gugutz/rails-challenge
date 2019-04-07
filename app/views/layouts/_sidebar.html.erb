@@ -1,44 +1,25 @@
 <aside class='sidebar'>
 
   <p class="">
-    <% if client_signed_in? && current_client.account != nil %>
 
-    Olá <strong><%= current_client.email %></strong>.<br>
     O que deseja fazer?
 
-    <a class="button is-light is-fullwidth" href="/clients/sign_up">
+    <a class="button is-light is-fullwidth" href="/clients/balance">
       <strong>Saldo</strong>
-      <!-- <%= link_to 'new_client_registration', '/clients/sign_up', :method => :get %> -->
     </a>
-    <a class="button is-light is-fullwidth" href="/clients/sign_in">
+    <a class="button is-light is-fullwidth" href="/clients/detailed_balance">
       <strong>Extrato</strong>
-      <!-- <%= link_to 'login', '/login', :method => :get %> -->
     </a>
-    <a class="button is-light is-fullwidth" href="/clients/sign_in">
+    <a class="button is-light is-fullwidth" href="/clients/withdraw">
       <strong>Saque</strong>
-      <!-- <%= link_to 'login', '/login', :method => :get %> -->
     </a>
-    <a class="button is-light is-fullwidth" href="/clients/sign_in">
+    <a class="button is-light is-fullwidth" href="/clients/deposit">
       <strong>Deposito</strong>
-      <!-- <%= link_to 'login', '/login', :method => :get %> -->
     </a>
-    <a class="button is-light is-fullwidth" href="/clients/sign_in">
+    <a class="button is-light is-fullwidth" href="/clients/transfer">
       <strong>Transferencia</strong>
-      <!-- <%= link_to 'login', '/login', :method => :get %> -->
     </a>
-    <% elsif client_logged_in? && current_client.account == nil %> 
-    <% end %>
 
-    <% unless client_signed_in? %>
-    <a class="button is-light is-fullwidth" href="/clients/sign_up">
-      <strong>Sign up</strong>
-      <!-- <%= link_to 'new_client_registration', '/clients/sign_up', :method => :get %> -->
-    </a>
-    <a class="button is-light is-fullwidth" href="/clients/sign_in">
-      <strong>Login</strong>
-      <!-- <%= link_to 'login', '/login', :method => :get %> -->
-    </a>
-    <% end %>
   </p>
 
 </aside>

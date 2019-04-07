@@ -1,10 +1,10 @@
 class Account < ApplicationRecord
   attr_reader :balance
 
-  validates :id,
-    format: integer,
-    presence: true
-  validates :balance, format: integer, presence: true
+  belongs_to :client
+
+  validates :id, presence: true
+  validates :balance, presence: true
 
   def check_balance
     return balance

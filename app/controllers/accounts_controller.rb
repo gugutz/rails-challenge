@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :edit, :update, :destroy]
 
   # this is what guarantees only authenticated users can perform actions on accounts
-  before_action :authenticate_user!
+  before_action :authenticate_client!
 
   # GET /accounts
   # GET /accounts.json

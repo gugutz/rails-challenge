@@ -1,5 +1,9 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_client!
+  before_action :check_for_account
+
+  layout :client_layout
 
   # GET /clients
   # GET /clients.json
@@ -61,6 +65,7 @@ class ClientsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
@@ -71,4 +76,16 @@ class ClientsController < ApplicationController
     def client_params
       params.require(:client).permit(:name, :accounts)
     end
+
+    def client_layout
+      client_signed_in? ? "application" : "home"
+    end
+
+    def check_for_account
+      if @current_client.account == nil
+        redirect_to new_account_registration_path
+      end
+    end
 end
+
+

@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
 
+ layout :client_layout
+
   def index
   end
 
@@ -7,5 +9,13 @@ class HomeController < ApplicationController
   end
 
   def login
+  end
+
+
+  private
+  
+  def client_layout
+    client_signed_in? ? "application" : "home"
+
   end
 end
